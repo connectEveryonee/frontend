@@ -1,0 +1,49 @@
+.large {
+  height: 50px;
+  font-size: 20px;
+  border-radius: 20px;
+  border-color: transparent;
+}
+
+.large:hover {
+  box-shadow: 0 10px 15px var(--purple-4);
+}
+
+.medium {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 15px;
+  border-color: transparent;
+}
+.medium:hover {
+  box-shadow: 0 10px 15px var(--purple-4);
+}
+
+.small {
+  width: 100%;
+  max-width: 250px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 15px;
+  border-color: transparent;
+}
+
+.small:hover {
+  box-shadow: 0 10px 15px var(--purple-4);
+}
+/* @keyframes glow {
+
+
+  0% {
+    background:var(--purple-2)
+  };
+  25% {
+    background:var(--purple-2) ;
+  };
+  100% {
+    background:var(--purple-2);
+  }
+  
+} */

@@ -1,0 +1,8 @@
+.eventsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(5, 500px);
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}

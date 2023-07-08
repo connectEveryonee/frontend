@@ -1,0 +1,16 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: auto;
+  padding: 80px;
+}
+.speakerDiv {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+}

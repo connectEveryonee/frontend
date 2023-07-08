@@ -1,0 +1,32 @@
+.heading {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.heading__lg {
+  font-size: 80px;
+  line-height: 1.2;
+}
+
+.heading__md {
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.heading__sm {
+  font-size: 24px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .heading__lg {
+    font-size: 40px;
+  }
+  .heading__md {
+    font-size: 24px;
+  }
+  .heading__sm {
+    font-size: 18px;
+  }
+}
