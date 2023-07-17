@@ -5,7 +5,7 @@ import Heading from "../Heading/Heading";
 
 import styles from "./chip.module.css";
 
-export default function Chip({ label, size, herf }) {
+export default function Chip({ label, size, herf =''}) {
   const router = useRouter();
   if (size === "md") {
     return (

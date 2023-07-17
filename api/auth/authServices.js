@@ -8,7 +8,7 @@ const instance = axios.create({
 export async function LoginApi(body) {
   try {
     const req = await instance({
-      url: "/auth/login",
+      url: "/api/auth/login",
       method: "post",
       data: {
         email: body.email,
@@ -32,7 +32,7 @@ export async function LoginApi(body) {
 export async function RegisterApi(body) {
   const req = await instance({
     method: "post",
-    url: "/auth/register/",
+    url: "/api/auth/register/",
     data: body,
   })
     .then((data) => {
@@ -42,14 +42,14 @@ export async function RegisterApi(body) {
       console.log(err);
       return err;
     });
- 
+
   return req;
 }
 
 export async function Logout() {
   const req = await instance({
     method: "get",
-    url: "/auth/logout",
+    url: "/api/auth/logout",
     withCredentials: true,
   })
     .then((data) => {

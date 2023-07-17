@@ -1,0 +1,9 @@
+.mainComp {
+  display: flex;
+  flex-direction: column;
+}
+.socialComp {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}

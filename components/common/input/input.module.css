@@ -25,9 +25,12 @@
 .label {
   position: absolute;
 }
+.large:focus {
+  border-color: var(--purple-3);
+  color: var(--purple-3);
+}
 
-
-.medium:focus-visible  {
+.medium:focus-visible {
   border-color: var(--purple-3);
   color: var(--purple-3);
 }

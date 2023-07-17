@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { LoginApi } from "@/api/auth/authServices";
 import { CustomInput } from "@/components/common/input/input";
 import { toast } from "react-toastify";
-import { SucessToast, WarningTost } from "@/utility/toaster";
+import { ErrorToast, SucessToast, WarningTost } from "@/utility/toaster";
 
 export const metadata = {
   title: "Login",
@@ -32,9 +32,9 @@ export default function Signin() {
         const res = await LoginApi({ ...userData });
 
         if (res !== 200) {
-          setmodalControl({ ...modalControl.failure, failure: true });
+         ErrorToast('unsucessful regestration')
         } else {
-          SucessToast("sucessful regesgration", router.push("/"));
+          SucessToast("sucessful regesgration", router.push("/events"));
         }
       } else {
         window.alert("enter valid email");

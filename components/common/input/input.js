@@ -11,8 +11,9 @@ export default function Input({
   label,
   onChange,
   value,
+  placeholder,
 }) {
-  if (size == "lg") {
+  if (size === "lg") {
     return (
       <div className={styles.inputComp}>
         <label className={styles.label}>{label}</label>
@@ -21,11 +22,12 @@ export default function Input({
           type={type}
           value={value}
           onChange={onChange}
+          placeholder={placeholder}
         />
       </div>
     );
   }
-  if (size == "md") {
+  if (size === "md") {
     return (
       <div>
         <label>{label}</label>
@@ -34,6 +36,21 @@ export default function Input({
           type={type}
           value={value}
           onChange={onChange}
+          placeholder={placeholder}
+        />
+      </div>
+    );
+  }
+  if (size == "sm") {
+    return (
+      <div>
+        <label>{label}</label>
+        <input
+          className={styles.medium}
+          type={type}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
         />
       </div>
     );
@@ -53,7 +70,7 @@ export class CustomInput extends React.Component {
   render() {
     if (this.props.size == "lg") {
       return (
-        <div className={styles.inputComp} >
+        <div className={styles.inputComp}>
           <label className={styles.label}>{this.props.label}</label>
           <input
             className={styles.large}
