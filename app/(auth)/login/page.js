@@ -32,9 +32,9 @@ export default function Signin() {
         const res = await LoginApi({ ...userData });
 
         if (res !== 200) {
-         ErrorToast('unsucessful regestration')
+          ErrorToast("unsucessful regestration");
         } else {
-          SucessToast("sucessful regesgration", router.push("/events"));
+          SucessToast("sucessful regesgration", router.push("/dashboard"));
         }
       } else {
         window.alert("enter valid email");

@@ -19,8 +19,9 @@
   --purple-4: rgba(42, 28, 81, 255);
   /* gradient*/
   --gradient-1: linear-gradient(135deg, rgb(101, 51, 255), rgb(111, 18, 179));
+  --gradient-2: linear-gradient(135deg, rgb(215, 225, 236), rgb(255, 255, 255));
   /* drop-shadow */
-  --dropShadow-1: 2px 2px 16px 0px  var(--purple-2) ;
+  --dropShadow-1: 2px 2px 16px 0px var(--purple-2);
   --dropShadow-2: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
