@@ -1,21 +1,18 @@
-'use client'
+"use client";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./mobile.module.css";
+import ViewSimpleLink from "@/components/viewSimpleLink/page";
 
 export default function Mobile() {
-   const z= async ()=>{
-    try {
-      const res = await Getlinks();
-
-    } catch (err) {
-      console.log(err);
-    }
-   }
-   z()
+  // const getLink = async () => {
+  //   const res = await fetch("http://localhost:3000/ram");
+  //   console.log(res);
+  //   return res;
+  // };
+  // getLink();
   return (
     <>
       <div className={styles.device}>
-        <div className={styles.status}></div>
         <div className={styles.floating}>
           <div className={styles.camera}>
             <div className={`${styles.blob} ${styles.white}`}></div>
@@ -24,6 +21,7 @@ export default function Mobile() {
             <div className={`${styles.blob} ${styles.red}`}></div>
           </div>
         </div>
+        {/* <ViewSimpleLink name='ram'/> */}
       </div>
     </>
   );

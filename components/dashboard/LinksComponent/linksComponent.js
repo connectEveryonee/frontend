@@ -3,6 +3,7 @@ import { RiAddFill } from "react-icons/ri";
 import Heading from "@/components/common/Heading/Heading";
 import LinkForm from "../linkForm/linkforms";
 import { useState } from "react";
+import EditLinks from "../editLinks/editLinks";
 
 export default function LinkComponent() {
   var modal = false;
@@ -27,8 +28,10 @@ export default function LinkComponent() {
           <section>
             <LinkForm onCrossClick={() => setsignal(!signal)} />
           </section>
-        )}
-
+        )}{" "}
+        <div className={styles.editLinks}>
+          <EditLinks />
+        </div>
         {/* {modal === true ? (
           <button
             className={styles.large}

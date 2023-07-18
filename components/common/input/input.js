@@ -12,18 +12,22 @@ export default function Input({
   onChange,
   value,
   placeholder,
+  className,
+  disabled = false,
 }) {
   if (size === "lg") {
     return (
       <div className={styles.inputComp}>
         <label className={styles.label}>{label}</label>
         <input
-          className={styles.large}
+          className={`${styles.large} ${className}`}
           type={type}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
+          disabled={disabled}
         />
+        {chidren}
       </div>
     );
   }
@@ -32,12 +36,14 @@ export default function Input({
       <div>
         <label>{label}</label>
         <input
-          className={styles.medium}
+          className={`${styles.medium} ${className}`}
           type={type}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
+          disabled={disabled}
         />
+        {chidren}
       </div>
     );
   }
@@ -46,12 +52,14 @@ export default function Input({
       <div>
         <label>{label}</label>
         <input
-          className={styles.medium}
+          className={`${styles.medium} ${className}`}
           type={type}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
+          disabled={disabled}
         />
+        {chidren}
       </div>
     );
   }

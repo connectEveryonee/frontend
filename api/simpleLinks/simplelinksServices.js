@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { cookies } from "next/dist/client/components/headers";
 
@@ -13,7 +12,7 @@ export async function Getlinks(user) {
       withCredentials: true,
     });
     return req.data;
-  } catch (error) {}
+  } catch (error) {
+    throw new Error(error);
+  }
 }
-
- 
