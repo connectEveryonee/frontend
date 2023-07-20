@@ -9,7 +9,6 @@ import Button from "@/components/common/Button/Button";
 import { NewUpdateLink } from "@/api/simpleLinks/updateSimpleLinkService";
 import { useState } from "react";
 import { SucessToast, WarningTost } from "@/utility/toaster";
-import EditLinks from "../editLinks/editLinks";
 
 export default function LinkForm({ onCrossClick }) {
   const [linkData, setlinkData] = useState({
@@ -77,9 +76,7 @@ export default function LinkForm({ onCrossClick }) {
           Add Link
         </Button>
         {/* <Socials /> */}
-   
       </div>
-      
     </>
   );
 }
