@@ -7,6 +7,7 @@ const instance = axios.create({
 });
 
 export async function Getlinks(user) {
+  
   try {
     const req = await instance.get(`/api/simplelink/get/${user}`, {});
     return req.data;

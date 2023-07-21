@@ -31,7 +31,7 @@ export default function LinkComponent() {
             <LinkForm onCrossClick={() => setsignal(!signal)} />
           </section>
         )}{" "}
-        <EditLinksComponent name='ram' />
+        <EditLinksComponent name="ram" />
       </div>
     </section>
   );

@@ -7,7 +7,6 @@
   border: solid 0.7rem black;
   border-radius: 2rem;
   position: relative;
-
 }
 
 .status {
@@ -109,9 +108,9 @@
 .device {
   /* box-shadow: offset-x offset-y blur spread color */
   box-shadow: var(--dropShadow-2);
-  background-image: url("/public/background.svg");
+  background-image: url("https://uploads-ssl.webflow.com/63ce8a45d805d5c08514e388/63dde8386bf1b16f7959f42f_hero%20Grains.svg");
   display: flex;
   align-items: center;
   justify-content: center;
-  gap:24px;
+  gap: 24px;
 }

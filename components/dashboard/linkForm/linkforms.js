@@ -9,6 +9,8 @@ import Button from "@/components/common/Button/Button";
 import { NewUpdateLink } from "@/api/simpleLinks/updateSimpleLinkService";
 import { useState } from "react";
 import { SucessToast, WarningTost } from "@/utility/toaster";
+import { store } from "@/redux/store";
+import { UpdateLinkLitems } from "@/redux/slices/linksSlice";
 
 export default function LinkForm({ onCrossClick }) {
   const [linkData, setlinkData] = useState({
@@ -23,6 +25,7 @@ export default function LinkForm({ onCrossClick }) {
     if (linkData.name.length > 0 || linkData.url.length > 0) {
       try {
         const res = await NewUpdateLink({ body: linkData });
+        store.dispatch(UpdateLinkLitems(linkData));
         onCrossClick();
         SucessToast("Sucessfully added role");
       } catch (err) {

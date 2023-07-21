@@ -5,12 +5,12 @@ import Heading from "@/components/common/Heading/Heading";
 import { CustomButton } from "@/components/common/Button/Button";
 import { useState } from "react";
 import Link from "next/link";
-import { Modal } from "@/components/modal/modal";
 import { useRouter } from "next/navigation";
 import { LoginApi } from "@/api/auth/authServices";
 import { CustomInput } from "@/components/common/input/input";
-import { toast } from "react-toastify";
 import { ErrorToast, SucessToast, WarningTost } from "@/utility/toaster";
+import { store } from "@/redux/store";
+import { SetUser } from "@/redux/slices/userSlice";
 
 export const metadata = {
   title: "Login",
@@ -31,9 +31,10 @@ export default function Signin() {
       if (userData.email.match("@") != null) {
         const res = await LoginApi({ ...userData });
 
-        if (res !== 200) {
+        if (res.status !== 200) {
           ErrorToast("unsucessful regestration");
         } else {
+          store.dispatch(SetUser(res.data.userInfo));
           SucessToast("sucessful regesgration", router.push("/dashboard"));
         }
       } else {
