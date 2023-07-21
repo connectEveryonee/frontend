@@ -6,7 +6,6 @@
 
   border: solid 0.7rem black;
   border-radius: 2rem;
-
   position: relative;
 
 }
@@ -107,121 +106,12 @@
   filter: blur(0.05rem);
 }
 
-.home {
-  width: 7rem;
-  aspect-ratio: 300 / 15;
-
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  margin: 0.3rem 0;
-
-  border-radius: 2rem; /* does not really matter */
-  background: snow;
-
-  z-index: 10;
-}
-
 .device {
   /* box-shadow: offset-x offset-y blur spread color */
-  box-shadow: 1.5rem 1rem 4rem -2rem #000b;
-
-  background: linear-gradient(120deg, #a1cbe4 0%, #e5e1d5 80%);
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  background-image: url("https://i.ibb.co/vPNphXs/image.webp");
-  background-size: 130%;
-  background-repeat: no-repeat;
-  background-position: 50% bottom;
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-.text {
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  text-align: center;
-  line-height: 1;
-  font-family: "Cherry Bomb One", cursive;
-
-  color: transparent;
-  background: linear-gradient(to bottom left, #059cb5, seagreen);
-  background-clip: text;
-}
-.text .line {
-  margin: 0;
-}
-.text .line.small {
-  font-size: 1.5rem;
-}
-.text .line.big {
-  font-size: 3rem;
-}
-
-/* TODO */
-.buttons {
-  display: none;
-}
-
-.slide {
-  aspect-ratio: 320 / 90;
-
-  position: absolute;
-  inset: 1.5rem;
-  top: auto;
-  margin-bottom: 0.5rem;
-
+  box-shadow: var(--dropShadow-2);
+  background-image: url("/public/background.svg");
   display: flex;
-  flex-direction: row;
   align-items: center;
-
-  border-radius: 2rem; /* does not matter */
-  backdrop-filter: brightness(3) saturate(2) blur(3rem);
-}
-.slidebtn {
-  position: absolute;
-  left: 0;
-
-  box-sizing: border-box;
-  height: 90%;
-  aspect-ratio: 1 / 1;
-  margin-left: 2%; /* just guessing */
-
-  display: grid;
-  place-items: center;
-
-  font-size: 1.5rem;
-  color: limegreen;
-
-  border-radius: 2rem; /* does not matter */
-  background: white;
-}
-.slide .label {
-  box-sizing: border-box;
-  flex: 1;
-  padding-left: 1rem;
-
-  text-align: center;
-  font-size: 0.8rem;
-
-  color: white;
-  /* color: transparent;
-  background: linear-gradient(90deg, #ffffff 20%, #cccccc 25%, #ffffff 30%);
-  background-clip: text; */
-
-  user-select: none;
+  justify-content: center;
+  gap:24px;
 }

@@ -1,7 +1,7 @@
 "use client";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./mobile.module.css";
-import ViewSimpleLink from "@/components/viewSimpleLink/page";
+import CustomLinks from "./customLInksComp";
 
 export default function Mobile() {
   // const getLink = async () => {
@@ -21,7 +21,7 @@ export default function Mobile() {
             <div className={`${styles.blob} ${styles.red}`}></div>
           </div>
         </div>
-        {/* <ViewSimpleLink name='ram'/> */}
+        <CustomLinks />
       </div>
     </>
   );
