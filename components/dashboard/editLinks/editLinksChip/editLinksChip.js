@@ -7,7 +7,7 @@ import { UpdateLinks } from "@/api/simpleLinks/updateLinksItems";
 import { DeleteLinkElemet } from "@/api/simpleLinks/deleteLinkElementServices";
 
 export default function EditLinks({ name, url, Links, index }) {
-  console.table(Links)
+  console.table(Links);
   const [editctr, seteditctr] = useState({
     name: true,
     url: true,
@@ -17,18 +17,19 @@ export default function EditLinks({ name, url, Links, index }) {
     url: url,
   });
   const updateLink = async () => {
+    Links[index] = linkData;
     const res = await UpdateLinks(Links);
     console.log(res);
   };
   const deleteLink = async () => {
     const links = Links.splice(index, 1);
-    const z= {
+    const z = {
       Links,
-      index
-    }
-    console.table(z.Links)
+      index,
+    };
+    console.table(z.Links);
 
-     const ze = await DeleteLinkElemet(Links);
+    const ze = await DeleteLinkElemet(Links);
     // const res = await UpdateLinks( Links.splice(index,1));
   };
 
