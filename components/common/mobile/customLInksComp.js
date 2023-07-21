@@ -5,7 +5,7 @@ import EventsChip from "@/components/events/eventsChip";
 import Heading from "@/components/common/Heading/Heading";
 
 export default async function CustomLinks({ name }) {
-  const q = await Getlinks("ram");
+  const q = await Getlinks(name);
 
   const Links = await q[1].SimpleLink.links;
 
