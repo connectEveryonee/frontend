@@ -1,15 +1,8 @@
-"use client";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./mobile.module.css";
 import CustomLinks from "./customLInksComp";
 
 export default function Mobile() {
-  // const getLink = async () => {
-  //   const res = await fetch("http://localhost:3000/ram");
-  //   console.log(res);
-  //   return res;
-  // };
-  // getLink();
   return (
     <>
       <div className={styles.device}>
@@ -21,7 +14,7 @@ export default function Mobile() {
             <div className={`${styles.blob} ${styles.red}`}></div>
           </div>
         </div>
-        <CustomLinks />
+        <CustomLinks name='ram' />
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-"use client";
+
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./link.module.css";
 import EventsChip from "@/components/events/eventsChip";
