@@ -6,15 +6,17 @@ const instance = axios.create({
   withCredentials: true,
 });
 
-export async function Getlinks(user) {
-  
+export async function Getlinks(userInfo) {
   try {
-    const req = await instance.get(`/api/simplelink/get/${user}`, {});
+    const req = await instance.get(`/api/simplelink/get/${userInfo.name}`, {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    });
 
-    return req.data[0].SimpleLink.links
+    return req.data[0].SimpleLink.links;
   } catch (error) {
+    console.log(error);
     throw new Error(error);
   }
 }
-
-

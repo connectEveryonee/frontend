@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import EditLinksComponent from "../editLinks/editLinksComponent/editLinksComponent";
 
-export default function LinkComponent({ UserName }) {
+export default function LinkComponent({ UserName,token }) {
   const [signal, setsignal] = useState(true);
 
   return (
@@ -31,7 +31,7 @@ export default function LinkComponent({ UserName }) {
             <LinkForm onCrossClick={() => setsignal(!signal)} />
           </section>
         )}{" "}
-        <EditLinksComponent name={UserName} />
+        <EditLinksComponent name={UserName}  token={token}/>
       </div>
     </section>
   );

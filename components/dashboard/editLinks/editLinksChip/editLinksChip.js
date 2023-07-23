@@ -22,9 +22,10 @@ export default function sEditLinks({ name, url, Links, index }) {
     await UpdateLinks(Links);
   };
   const deleteLink = async () => {
-    const links = Links.splice(index, 1);
-    await DeleteLinkElemet(Links);
-    store.dispatch(DeleteLinkItem(index));
+    const newLinks = [...Links];
+    newLinks.splice(index, 1);
+    await DeleteLinkElemet(newLinks);
+    store.dispatch(DeleteLinkItem(newLinks));
   };
 
   // const UpdateLinks = async () => {};

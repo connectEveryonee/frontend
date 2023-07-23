@@ -7,13 +7,15 @@ import { store } from "@/redux/store";
 import { setInitialLinks } from "@/redux/slices/linksSlice";
 
 export default function Page() {
-  const { userName, token } = JSON.parse(cookies().get("userInfo").value);
+  const { userName } = JSON.parse(cookies().get("userInfo").value);
+  const { token } = JSON.parse(cookies().get("access_token").value);
+  
 
   return (
     <>
       <div className={styles.eventsContainer}>
-        <LinkComponent UserName={userName} />
-        <Mobile userName={userName} />
+        <LinkComponent UserName={userName} token={token} />
+        <Mobile userName={userName} token={token} />
       </div>
     </>
   );

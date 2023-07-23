@@ -6,11 +6,11 @@ import Heading from "@/components/common/Heading/Heading";
 import { store } from "@/redux/store";
 import { useEffect, useState } from "react";
 
-export default function CustomLinks({ name }) {
+export default function CustomLinks({ name ,token}) {
   const [Links, setLinks] = useState([]);
 
   const initialSetUp = async () => {
-    const data = await Getlinks(name);
+    const data = await Getlinks({name:name,token:token});
     setLinks(data);
   };
   useEffect(() => {

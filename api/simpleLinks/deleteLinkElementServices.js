@@ -1,3 +1,4 @@
+import { ErrorToast, SucessToast } from "@/utility/toaster";
 import axios from "axios";
 
 const instance = axios.create({
@@ -12,10 +13,10 @@ export async function DeleteLinkElemet(links) {
     });
     if (req.status === 200) {
       SucessToast(req.data);
-      return req.data;
+      return req.status;
     } else {
       ErrorToast(req.data);
-      return data;
+      return req.status;
     }
   } catch (error) {
     console.log(error);

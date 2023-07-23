@@ -6,12 +6,13 @@ import EditLinks from "../editLinksChip/editLinksChip";
 import { store } from "@/redux/store";
 import { setInitialLinks } from "@/redux/slices/linksSlice";
 
-export default function EditLinksComponent({ name }) {
+export default function EditLinksComponent({ name, token }) {
   const [Links, setLinks] = useState([]);
 
   const initialSetUp = async () => {
-    const data = await Getlinks(name);
-    setLinks(data);
+    const data = await Getlinks({name:name,token:token});
+    store.dispatch(setInitialLinks(data))
+    setLinks(store.getState().Links);
   };
   useEffect(() => {
     initialSetUp();
