@@ -3,11 +3,23 @@ import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./link.module.css";
 import EventsChip from "@/components/events/eventsChip";
 import Heading from "@/components/common/Heading/Heading";
+import { store } from "@/redux/store";
+import { useEffect, useState } from "react";
 
-export default async function CustomLinks({ name }) {
-  const q = await Getlinks(name);
+export default function CustomLinks({ name }) {
+  const [Links, setLinks] = useState([]);
 
-  const Links = await q[1].SimpleLink.links;
+  const initialSetUp = async () => {
+    const data = await Getlinks(name);
+    setLinks(data);
+  };
+  useEffect(() => {
+    initialSetUp();
+  }, []);
+
+  store.subscribe(() => {
+    setLinks(store.getState().Links);
+  });
 
   return (
     <>
@@ -15,7 +27,7 @@ export default async function CustomLinks({ name }) {
         <div className={styles.headingComp}>
           <Heading size="sm" cplor="var(--black-1)">
             {" "}
-            <b>@</b> {"ram"}
+            <b>@</b> {name}
           </Heading>
         </div>
         <div className={styles.links}>

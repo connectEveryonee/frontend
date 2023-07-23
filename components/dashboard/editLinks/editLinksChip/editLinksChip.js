@@ -19,19 +19,12 @@ export default function sEditLinks({ name, url, Links, index }) {
   });
   const updateLink = async () => {
     Links[index] = linkData;
-    const res = await UpdateLinks(Links);
-    console.log(res);
+    await UpdateLinks(Links);
   };
   const deleteLink = async () => {
     const links = Links.splice(index, 1);
-    const z = {
-      Links,
-      index,
-    };
-
-    const ze = await DeleteLinkElemet(Links);
-    store.dispatch(DeleteLinkItem(z));
-    // const res = await UpdateLinks( Links.splice(index,1));
+    await DeleteLinkElemet(Links);
+    store.dispatch(DeleteLinkItem(index));
   };
 
   // const UpdateLinks = async () => {};

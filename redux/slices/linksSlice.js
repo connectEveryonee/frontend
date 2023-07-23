@@ -7,7 +7,7 @@ const LinksSlice = createSlice({
   initialState,
   reducers: {
     setInitialLinks: (state, action) => {
-      for (let i = 0; i <= action.payload.length; i++) {
+      for (let i = 0; i < action.payload.length; i++) {
         state[i] = action.payload[i];
       }
     },
@@ -15,8 +15,7 @@ const LinksSlice = createSlice({
       state.push(action.payload);
     },
     DeleteLinkItem: (state, action) => {
-      console.log(action.payload);
-      // state.splice(action., action.payload);
+      state.splice(action.payload, 1);
     },
   },
 });

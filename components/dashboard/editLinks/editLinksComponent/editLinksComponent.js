@@ -1,5 +1,5 @@
 "use clinet";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import styles from "./editLinksComponent.module.css";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import EditLinks from "../editLinksChip/editLinksChip";
@@ -8,21 +8,18 @@ import { setInitialLinks } from "@/redux/slices/linksSlice";
 
 export default function EditLinksComponent({ name }) {
   const [Links, setLinks] = useState([]);
-  let z = [];
-  const getLinks = async () => {
-    const res = await Getlinks(name);
-    store.dispatch(setInitialLinks(res[1].SimpleLink.links));
 
-    setLinks(res[1].SimpleLink.links);
+  const initialSetUp = async () => {
+    const data = await Getlinks(name);
+    setLinks(data);
   };
   useEffect(() => {
-    getLinks();
+    initialSetUp();
   }, []);
-  const updateLinks = async ({ links }) => {
-    // const res = await UpdateLinks(links);
-    // console.log(res);
-    return 1;
-  };
+
+  store.subscribe(() => {
+    setLinks(store.getState().Links);
+  });
 
   return (
     <section className={styles.mainComp}>
@@ -32,9 +29,6 @@ export default function EditLinksComponent({ name }) {
             name={data.name}
             url={data.url}
             key={index}
-            UpdateLinks={() => {
-              updateLinks();
-            }}
             Links={Links}
             index={index}
           />

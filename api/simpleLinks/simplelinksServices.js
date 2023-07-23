@@ -10,7 +10,8 @@ export async function Getlinks(user) {
   
   try {
     const req = await instance.get(`/api/simplelink/get/${user}`, {});
-    return req.data;
+
+    return req.data[0].SimpleLink.links
   } catch (error) {
     throw new Error(error);
   }
