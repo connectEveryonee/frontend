@@ -1,13 +1,10 @@
-
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./link.module.css";
 import EventsChip from "@/components/events/eventsChip";
 import Heading from "@/components/common/Heading/Heading";
 
 export default async function Page({ params }) {
-  const q = await Getlinks(params.userName);
-
-  const Links = await q[1].SimpleLink.links;
+  const Links = await Getlinks(params.userName);
 
   return (
     <>

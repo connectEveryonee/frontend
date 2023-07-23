@@ -2,7 +2,7 @@ import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./mobile.module.css";
 import CustomLinks from "./customLInksComp";
 
-export default function Mobile() {
+export default function Mobile({userName}) {
   return (
     <>
       <div className={styles.device}>
@@ -14,7 +14,7 @@ export default function Mobile() {
             <div className={`${styles.blob} ${styles.red}`}></div>
           </div>
         </div>
-        <CustomLinks name='ram' />
+        <CustomLinks name={userName} />
       </div>
     </>
   );

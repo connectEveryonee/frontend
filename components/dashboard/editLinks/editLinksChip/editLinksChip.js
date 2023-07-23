@@ -5,9 +5,10 @@ import Input from "@/components/common/input/input";
 import { useState } from "react";
 import { UpdateLinks } from "@/api/simpleLinks/updateLinksItems";
 import { DeleteLinkElemet } from "@/api/simpleLinks/deleteLinkElementServices";
+import { store } from "@/redux/store";
+import { DeleteLinkItem } from "@/redux/slices/linksSlice";
 
-export default function EditLinks({ name, url, Links, index }) {
-  console.table(Links);
+export default function sEditLinks({ name, url, Links, index }) {
   const [editctr, seteditctr] = useState({
     name: true,
     url: true,
@@ -18,19 +19,12 @@ export default function EditLinks({ name, url, Links, index }) {
   });
   const updateLink = async () => {
     Links[index] = linkData;
-    const res = await UpdateLinks(Links);
-    console.log(res);
+    await UpdateLinks(Links);
   };
   const deleteLink = async () => {
     const links = Links.splice(index, 1);
-    const z = {
-      Links,
-      index,
-    };
-    console.table(z.Links);
-
-    const ze = await DeleteLinkElemet(Links);
-    // const res = await UpdateLinks( Links.splice(index,1));
+    await DeleteLinkElemet(Links);
+    store.dispatch(DeleteLinkItem(index));
   };
 
   // const UpdateLinks = async () => {};

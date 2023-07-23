@@ -1,3 +1,4 @@
+import { store } from "@/redux/store";
 import axios from "axios";
 //creating axios instace
 const instance = axios.create({
@@ -19,10 +20,10 @@ export async function LoginApi(body) {
       return err;
     });
     if (req.status == 401) {
-      return req.status;
+      return req;
     }
 
-    return req.status;
+    return req;
   } catch (error) {
     console.log(error);
   }
