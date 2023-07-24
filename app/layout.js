@@ -8,8 +8,8 @@ import ReduxProvider from "@/redux/provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "InMyEvent",
-  description: "Your one-stop shop for event planning",
+  title: "SimpleLinks",
+  description: "Sharing Links made Simple",
 };
 
 export default function RootLayout({ children }) {

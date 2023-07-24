@@ -12,10 +12,7 @@ import { ErrorToast, SucessToast, WarningTost } from "@/utility/toaster";
 import { store } from "@/redux/store";
 import { SetUser } from "@/redux/slices/userSlice";
 
-export const metadata = {
-  title: "Login",
-  description: "Your Ultimate Event Partner.",
-};
+
 
 export default function Signin() {
   const [userData, setUserData] = useState({
