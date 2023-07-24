@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Text.module.css";
+import styles from "./text.module.css";
 
 export default function Text({ children, size = "md", color = "#333", type }) {
   if (size === "lg") {
