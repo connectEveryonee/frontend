@@ -8,7 +8,7 @@ import { DeleteLinkElemet } from "@/api/simpleLinks/deleteLinkElementServices";
 import { store } from "@/redux/store";
 import { DeleteLinkItem } from "@/redux/slices/linksSlice";
 
-export default function sEditLinks({ name, url, Links, index }) {
+export default function EditLinks({ name, url, Links, index }) {
   const [editctr, seteditctr] = useState({
     name: true,
     url: true,

@@ -1,4 +1,3 @@
-import Mobile from "@/components/common/mobile/mobilephone";
 import HomeBanner from "@/components/home/homeBanner/homeBanner";
 import LandingNavbar from "@/components/home/navbar/navbar";
 import OurServices from "@/components/home/ourServices/ourservices.js";
@@ -17,7 +16,6 @@ export default function Home() {
         {" "}
         <LandingNavbar />
         <HomeBanner />
-        {/* <Mobile/> */}
         <OurServices />
       </div>
     </>
