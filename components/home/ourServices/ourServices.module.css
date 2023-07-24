@@ -15,11 +15,15 @@
 }
 .process {
   display: flex;
-  gap: 300px;
+  gap: 160px;
 }
 
 @media (max-width: 768px) {
   .mainContiner {
     gap: 50px;
+  }
+  .process {
+    flex-direction: column;
+    gap: 160px;
   }
 }

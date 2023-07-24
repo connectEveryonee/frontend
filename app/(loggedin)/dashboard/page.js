@@ -9,13 +9,12 @@ import { setInitialLinks } from "@/redux/slices/linksSlice";
 export default function Page() {
   const { userName } = JSON.parse(cookies().get("userInfo").value);
   const { token } = JSON.parse(cookies().get("access_token").value);
-  
 
   return (
     <>
       <div className={styles.eventsContainer}>
         <LinkComponent UserName={userName} token={token} />
-        <Mobile userName={userName} token={token} />
+        <Mobile userName={userName} token={token} className={styles.mobile} />
       </div>
     </>
   );

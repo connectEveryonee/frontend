@@ -3,7 +3,12 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  border-right: 1px solid grey;
+  padding: 24px;
+
 }
 
-
+@media (max-width: 760px) {
+  .mobile {
+    display: none;
+  }
+}

@@ -6,17 +6,20 @@
   justify-content: center;
 }
 .addLinkComp {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: auto;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 25px;
 }
 .large {
-  height: 50px;
-  width: 500px;
+  max-height: 50px;
+  width: 100%;
+  max-width: 500px;
   border-radius: 50px;
   background-image: var(--gradient-1);
   display: flex;
@@ -30,4 +33,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+@media (max-width: 760px) {
 }

@@ -1,5 +1,6 @@
 .mainComp {
-  min-width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 100px;
   border-radius: 24px;
   border: 1px solid grey;
@@ -7,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 150px;
 }
 
 .content {
@@ -28,4 +30,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+
+@media(max-width:760px) {
+  .mainComp{
+    justify-content: center;
+    padding: 8px;
+    gap: 16px;
+  }
 }
