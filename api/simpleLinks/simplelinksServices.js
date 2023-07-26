@@ -8,12 +8,12 @@ const instance = axios.create({
 
 export async function Getlinks(userInfo) {
   try {
-    const req = await instance.get(`/api/simplelink/get/${userInfo.name}`, {
+    const req = await instance.get(`/api/simplelink/get/${userInfo}`, {
       headers: {
-        Authorization: `Bearer ${userInfo.token}`,
+        // Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
-
+    console.log(req.data[0].SimpleLink.links);
     return req.data[0].SimpleLink.links;
   } catch (error) {
     console.log(error);

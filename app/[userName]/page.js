@@ -1,9 +1,11 @@
+"use client";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./link.module.css";
 import EventsChip from "@/components/events/eventsChip";
 import Heading from "@/components/common/Heading/Heading";
 
 export default async function Page({ params }) {
+  console.log(params);
   const Links = await Getlinks(params.userName);
 
   return (
