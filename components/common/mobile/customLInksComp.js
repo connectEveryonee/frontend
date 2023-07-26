@@ -6,11 +6,11 @@ import Heading from "@/components/common/Heading/Heading";
 import { store } from "@/redux/store";
 import { useEffect, useState } from "react";
 
-export default function CustomLinks({ name ,token}) {
+export default function CustomLinks() {
   const [Links, setLinks] = useState([]);
-
+  const { userName, token } = store.getState().user;
   const initialSetUp = async () => {
-    const data = await Getlinks({name:name,token:token});
+    const data = await Getlinks({ name: userName, token: token });
     setLinks(data);
   };
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function CustomLinks({ name ,token}) {
         <div className={styles.headingComp}>
           <Heading size="sm" cplor="var(--black-1)">
             {" "}
-            <b>@</b> {name}
+            <b>@</b> {userName}
           </Heading>
         </div>
         <div className={styles.links}>

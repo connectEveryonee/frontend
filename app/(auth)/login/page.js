@@ -12,8 +12,6 @@ import { ErrorToast, SucessToast, WarningTost } from "@/utility/toaster";
 import { store } from "@/redux/store";
 import { SetUser } from "@/redux/slices/userSlice";
 
-
-
 export default function Signin() {
   const [userData, setUserData] = useState({
     email: "",

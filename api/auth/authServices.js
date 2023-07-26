@@ -1,8 +1,14 @@
+import { SetUser } from "@/redux/slices/userSlice";
 import { store } from "@/redux/store";
 import axios from "axios";
 //creating axios instace
+axios.defaults.withCredentials = true;
 const instance = axios.create({
   baseURL: process.env.baseUrl,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  withCredentials: true,
 });
 
 //signin/login service
@@ -16,16 +22,16 @@ export async function LoginApi(body) {
         password: body.password,
       },
       withCredentials: true,
-    }).catch((err) => {
-      return err;
     });
     if (req.status == 401) {
       return req;
     }
-
-    return req;
+    if (req.status === 200) {
+      store.dispatch(SetUser(req.data.userInfo));
+      return req;
+    }
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 }
 

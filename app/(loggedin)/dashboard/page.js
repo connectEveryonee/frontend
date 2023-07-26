@@ -5,16 +5,16 @@ import LinkComponent from "@/components/dashboard/LinksComponent/linksComponent"
 import { cookies } from "next/dist/client/components/headers";
 import { store } from "@/redux/store";
 import { setInitialLinks } from "@/redux/slices/linksSlice";
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  const { userName } = JSON.parse(cookies().get("userInfo").value);
-  const { token } = JSON.parse(cookies().get("access_token").value);
+ 
 
   return (
     <>
       <div className={styles.eventsContainer}>
-        <LinkComponent UserName={userName} token={token} />
-        <Mobile userName={userName} token={token} className={styles.mobile} />
+        <LinkComponent />
+        <Mobile  />
       </div>
     </>
   );

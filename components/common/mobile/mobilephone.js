@@ -14,7 +14,7 @@ export default function Mobile({userName, token,className}) {
             <div className={`${styles.blob} ${styles.red}`}></div>
           </div>
         </div>
-        <CustomLinks name={userName} token={token}/>
+        <CustomLinks/>
       </div>
     </>
   );
