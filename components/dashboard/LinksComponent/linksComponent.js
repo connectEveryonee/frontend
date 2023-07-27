@@ -4,10 +4,8 @@ import { RiAddFill } from "react-icons/ri";
 import Heading from "@/components/common/Heading/Heading";
 import LinkForm from "../linkForm/linkforms";
 import { useState } from "react";
-
 import EditLinksComponent from "../editLinks/editLinksComponent/editLinksComponent";
-import { store } from "@/redux/store";
-import { SetUser } from "@/redux/slices/userSlice";
+
 
 export default function LinkComponent() {
   const [signal, setsignal] = useState(true);

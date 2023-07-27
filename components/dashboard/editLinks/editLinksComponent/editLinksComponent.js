@@ -1,5 +1,5 @@
 "use clinet";
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import styles from "./editLinksComponent.module.css";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import EditLinks from "../editLinksChip/editLinksChip";
