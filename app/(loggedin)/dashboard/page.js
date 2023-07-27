@@ -30,11 +30,14 @@ export default function Page() {
         {" "}
         <Button
           onClick={() => {
-    navigator.clipboard.writeText(`https://simplelinks.netlify.app/${store.getState().user.userName}`)
-        SucessToast('link Copied to Clip Board')
+            navigator.clipboard.writeText(
+              `https://simplelinks.netlify.app/${
+                store.getState().user.userName
+              }`
+            );
+            SucessToast("link Copied to Clip Board");
           }}
           size="sm"
-          
         >
           <RiStackshareLine /> Share Link
         </Button>
