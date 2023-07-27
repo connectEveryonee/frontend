@@ -114,3 +114,9 @@
   justify-content: center;
   gap: 24px;
 }
+
+@media (max-width: 460px) {
+  .device {
+    display: none;
+  }
+}
