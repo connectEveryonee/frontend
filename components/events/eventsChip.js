@@ -17,11 +17,11 @@ export default function EventsChip({ url, title, size = "lg" }) {
   if (size === "md") {
     return (
       <div className={styles.mainComp}>
-        <div className={styles.Chipmd}>
-          <Link href={url} style={{ textDecoration: "none" }} prefetch={true}>
+        <Link href={url} style={{ textDecoration: "none" }} prefetch={true}>
+          <div className={styles.Chipmd}>
             <Text size="lg">{title}</Text>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     );
   }
