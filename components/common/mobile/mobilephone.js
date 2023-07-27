@@ -1,11 +1,11 @@
-import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
+
 import styles from "./mobile.module.css";
 import CustomLinks from "./customLInksComp";
 
-export default function Mobile({userName, token,className}) {
+export default function Mobile({userName}) {
   return (
     <>
-      <div className={`${styles.device} ${className}`}>
+      <div className={`${styles.device}`}>
         <div className={styles.floating}>
           <div className={styles.camera}>
             <div className={`${styles.blob} ${styles.white}`}></div>
@@ -14,7 +14,7 @@ export default function Mobile({userName, token,className}) {
             <div className={`${styles.blob} ${styles.red}`}></div>
           </div>
         </div>
-        <CustomLinks/>
+        <CustomLinks userName={userName} />
       </div>
     </>
   );

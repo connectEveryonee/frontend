@@ -1,20 +1,25 @@
-import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
+"use client";
 import styles from "./events.module.css";
 import Mobile from "@/components/common/mobile/mobilephone";
 import LinkComponent from "@/components/dashboard/LinksComponent/linksComponent";
-import { cookies } from "next/dist/client/components/headers";
+import { SetUser } from "@/redux/slices/userSlice";
 import { store } from "@/redux/store";
-import { setInitialLinks } from "@/redux/slices/linksSlice";
-import { redirect } from "next/navigation";
 
 export default function Page() {
- 
+  if (typeof window !== "undefined") {
+    // do localStorage stuff here
+    const userInfo = {
+      userName: localStorage.getItem("userName"),
+      token: localStorage.getItem("token"),
+    };
+    store.dispatch(SetUser(userInfo));
+  }
 
   return (
     <>
       <div className={styles.eventsContainer}>
         <LinkComponent />
-        <Mobile  />
+        <Mobile userName={store.getState().user.userName} />
       </div>
     </>
   );

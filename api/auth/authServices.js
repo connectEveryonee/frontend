@@ -1,4 +1,3 @@
-import { SetUser } from "@/redux/slices/userSlice";
 import { store } from "@/redux/store";
 import axios from "axios";
 //creating axios instace
@@ -13,26 +12,23 @@ const instance = axios.create({
 
 //signin/login service
 export async function LoginApi(body) {
-  try {
-    const req = await instance({
-      url: "/api/auth/login",
-      method: "post",
-      data: {
-        email: body.email,
-        password: body.password,
-      },
-      withCredentials: true,
+  const req = await instance({
+    url: "/api/auth/login",
+    method: "post",
+    data: {
+      email: body.email,
+      password: body.password,
+    },
+    withCredentials: true,
+  })
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      return err.response;
     });
-    if (req.status == 401) {
-      return req;
-    }
-    if (req.status === 200) {
-      store.dispatch(SetUser(req.data.userInfo));
-      return req;
-    }
-  } catch (error) {
-    throw new Error(error);
-  }
+
+  return req;
 }
 
 //register/signup service

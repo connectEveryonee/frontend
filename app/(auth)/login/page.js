@@ -25,15 +25,17 @@ export default function Signin() {
     } else {
       if (userData.email.match("@") != null) {
         const res = await LoginApi({ ...userData });
-
+        console.log(res);
         if (res.status !== 200) {
           ErrorToast("unsucessful regestration");
         } else {
+          localStorage.setItem("userName", res.data.userInfo.userName);
+          localStorage.setItem("token", res.data.userInfo.token);
           store.dispatch(SetUser(res.data.userInfo));
           SucessToast("sucessful regesgration", router.push("/dashboard"));
         }
       } else {
-        window.alert("enter valid email");
+        WarningTost("enter valid email");
       }
     }
   };

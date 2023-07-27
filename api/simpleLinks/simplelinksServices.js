@@ -6,17 +6,33 @@ const instance = axios.create({
   withCredentials: true,
 });
 
-export async function Getlinks(userInfo) {
-  try {
-    const req = await instance.get(`/api/simplelink/get/${userInfo}`, {
-      headers: {
-        // Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
+export async function Getlinks(name) {
+  // try {
+  var Links = [];
+  const req = await instance
+    .get(`/api/simplelink/get/${name}`, {
+      // headers: {
+      //   Authorization: `Bearer ${userInfo.token}`,
+      // },
+    })
+    .then((data) => {
+      if (data.status === 200) {
+        return data.data[0].SimpleLink.links;
+      } else {
+        return data.data;
+      }
+    })
+    .catch((err) => {
+      return err.response.data;
     });
-    console.log(req.data[0].SimpleLink.links);
-    return req.data[0].SimpleLink.links;
-  } catch (error) {
-    console.log(error);
-    throw new Error(error);
-  }
+  //   if (req.status === 200) {
+  //     Links = req.data[0].SimpleLink.links;
+  //     return Links;
+  //   }
+  //   return Links;
+  // } catch (error) {
+  //   console.log(error);
+  //   throw new Error(error);
+  // }
+  return req;
 }

@@ -3,13 +3,15 @@ import styles from "./linksComponent.module.css";
 import { RiAddFill } from "react-icons/ri";
 import Heading from "@/components/common/Heading/Heading";
 import LinkForm from "../linkForm/linkforms";
-import { useEffect, useState } from "react";
-import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
+import { useState } from "react";
+
 import EditLinksComponent from "../editLinks/editLinksComponent/editLinksComponent";
 import { store } from "@/redux/store";
+import { SetUser } from "@/redux/slices/userSlice";
 
-export default function LinkComponent({ UserName,token }) {
+export default function LinkComponent() {
   const [signal, setsignal] = useState(true);
+
 
   return (
     <section className={styles.mainComp}>
@@ -32,7 +34,7 @@ export default function LinkComponent({ UserName,token }) {
             <LinkForm onCrossClick={() => setsignal(!signal)} />
           </section>
         )}{" "}
-        <EditLinksComponent name={store.getState().user.userName}  token={store.getState().user.token}/>
+        <EditLinksComponent/>
       </div>
     </section>
   );
