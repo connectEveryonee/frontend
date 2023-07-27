@@ -8,6 +8,7 @@ import { store } from "@/redux/store";
 import Button from "@/components/common/Button/Button";
 import Link from "next/link";
 import { RiStackshareLine } from "react-icons/ri";
+import { SucessToast } from "@/utility/toaster";
 
 export default function Page() {
   if (typeof window !== "undefined") {
@@ -27,13 +28,15 @@ export default function Page() {
       </div>
       <center>
         {" "}
-        <Button size="sm" label="shareLink">
-          <Link
-            href={`/${store.getState().user.userName}`}
-            style={{ textDecoration: "none" }}
-          >
-            <RiStackshareLine /> Share Link
-          </Link>
+        <Button
+          onClick={() => {
+    navigator.clipboard.writeText(`https://simplelinks.netlify.app/${store.getState().user.userName}`)
+        SucessToast('link Copied to Clip Board')
+          }}
+          size="sm"
+          
+        >
+          <RiStackshareLine /> Share Link
         </Button>
       </center>
     </>
