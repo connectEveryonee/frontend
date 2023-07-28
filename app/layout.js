@@ -1,9 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Footer from "@/components/common/footer/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import ReduxProvider from "@/redux/provider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 

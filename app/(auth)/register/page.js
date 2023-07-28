@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { CustomInput } from "@/components/common/input/input";
 import { ErrorToast, SucessToast, WarningTost } from "@/utility/toaster";
 import { RegisterApi } from "@/api/auth/authServices";
+import { CheckuserName } from "@/api/user/userService";
 
 export default function SignuP() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function SignuP() {
     roles: ["user"],
   });
 
-  const SubmitHandele = async () => {
+  const register = async () => {
     if (!userData.email || !userData.password || !userData.userName) {
       WarningTost("plz fill all feilds");
     } else {
@@ -30,6 +31,18 @@ export default function SignuP() {
       } else {
         ErrorToast(res.response.data);
       }
+    }
+  };
+  const SubmitHandele = async () => {
+    const userNameCheker = await CheckuserName(userData.userName);
+
+    if (userNameCheker.status === 403) {
+      ErrorToast(
+        "username already exits",
+        setUserData({ ...userData, userName: "" })
+      );
+    } else {
+      register();
     }
   };
 
