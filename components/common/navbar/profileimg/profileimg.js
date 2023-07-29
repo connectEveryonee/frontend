@@ -22,9 +22,12 @@ export default function Profileimg() {
       {/* <Heading size="sm" fontFamily="var(--system-font)">
         Profile
       </Heading> */}
-      <div style={{ cursor: "pointer" }} onClick={()=>{
-        router.push('/profile')
-      }}>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          router.push("/profile");
+        }}
+      >
         <Heading size="sm" fontFamily="var(--system-font)">
           Profile
         </Heading>

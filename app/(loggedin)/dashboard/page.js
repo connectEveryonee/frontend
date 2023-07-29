@@ -11,14 +11,7 @@ import { RiStackshareLine } from "react-icons/ri";
 import { SucessToast } from "@/utility/toaster";
 
 export default function Page() {
-  if (typeof window !== "undefined") {
-    // do localStorage stuff here
-    const userInfo = {
-      userName: localStorage.getItem("userName"),
-      token: localStorage.getItem("token"),
-    };
-    store.dispatch(SetUser(userInfo));
-  }
+
 
   return (
     <>
