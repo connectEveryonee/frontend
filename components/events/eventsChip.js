@@ -1,3 +1,4 @@
+"use client";
 import Text from "../common/text/text";
 import styles from "./eventsChip.module.css";
 import Link from "next/link";
@@ -7,7 +8,7 @@ export default function EventsChip({ url, title, size = "lg" }) {
     return (
       <div className={styles.mainComp}>
         <div className={styles.Chip}>
-          <Link href={url} style={{ textDecoration: "none" }} prefetch={true}>
+          <Link href={url} style={{ textDecoration: "none" }} prefetch={true} target="_blank">
             <Text size="lg">{title}</Text>
           </Link>
         </div>

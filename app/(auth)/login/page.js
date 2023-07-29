@@ -27,12 +27,12 @@ export default function Signin() {
         const res = await LoginApi({ ...userData });
         console.log(res);
         if (res.status !== 200) {
-          ErrorToast("unsucessful regestration");
+          ErrorToast(" Login failed", "", "❌");
         } else {
           localStorage.setItem("userName", res.data.userInfo.userName);
           localStorage.setItem("token", res.data.userInfo.token);
           store.dispatch(SetUser(res.data.userInfo));
-          SucessToast("sucessful regesgration", router.push("/dashboard"));
+          SucessToast(" Login Sucessful", router.push("/dashboard"), " 🎉");
         }
       } else {
         WarningTost("enter valid email");

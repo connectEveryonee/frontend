@@ -4,9 +4,9 @@ import styles from "./Heading.module.css";
 export default function Heading({ children, size = "lg", color = "#333",fontFamily }) {
   if (size === "lg") {
     return (
-      <h1 style={{ color ,fontFamily:fontFamily }} className={`${styles.heading__lg} ${styles.heading}`}>
-        {children}
-      </h1>
+    <center>  <h1 style={{ color ,fontFamily:fontFamily }} className={`${styles.heading__lg} ${styles.heading}`}>
+    {children}
+  </h1></center>
     );
   }
   if (size == "md") {

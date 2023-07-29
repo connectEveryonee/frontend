@@ -11,6 +11,7 @@ import { useState } from "react";
 import { SucessToast, WarningTost } from "@/utility/toaster";
 import { store } from "@/redux/store";
 import { UpdateLinkLitems } from "@/redux/slices/linksSlice";
+import { IsURL } from "@/utility/UrlChecker";
 
 export default function LinkForm({ onCrossClick }) {
   const [linkData, setlinkData] = useState({
@@ -18,11 +19,9 @@ export default function LinkForm({ onCrossClick }) {
     url: "",
   });
 
-  const ClearData = () => {
-    setlinkData({ ...linkData, name: "" });
-  };
+  const urlCheck = IsURL(linkData.url);
   const z = async () => {
-    if (linkData.name.length > 0 || linkData.url.length > 0) {
+    if (linkData.name.length > 0 && urlCheck) {
       try {
         const res = await NewUpdateLink({ body: linkData });
         store.dispatch(UpdateLinkLitems(linkData));
@@ -32,7 +31,7 @@ export default function LinkForm({ onCrossClick }) {
         console.log(err);
       }
     } else {
-      WarningTost("enter all details");
+      WarningTost("Enter a  proper url");
     }
   };
 

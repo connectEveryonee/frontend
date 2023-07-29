@@ -24,4 +24,8 @@
   .rightDiv {
     gap: 5px;
   }
+  .Logo {
+    width: 36px;
+    height: 36px;
+  }
 }

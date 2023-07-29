@@ -9,7 +9,13 @@ export default function LandingNavbar() {
       <div className={styles.navContainer}>
         <Link href="/" style={{ textDecoration: "none" }} prefetch={false}>
           <div className={styles.leftDiv}>
-            <Image src="/logo.png" height={60} width={60} alt="logo" />
+            <Image
+              src="/logo.png"
+              height={60}
+              width={60}
+              alt="logo"
+              className={styles.Logo}
+            />
             <Heading size="md" fontFamily="Ubuntu">
               SimpleLink
             </Heading>

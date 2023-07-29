@@ -1,9 +1,9 @@
 import Heading from "@/components/common/Heading/Heading";
 import styles from "./homeCard.module.css";
 import Text from "@/components/common/text/text";
-import Image from "next/image";
 import Chip from "@/components/common/chip/chip";
-export default function HomeCard({ title, description, label, herf }) {
+
+export default function HomeCard({ title, description, label, herf, icon }) {
   if (herf) {
     return (
       <div className={styles.cardContainer}>
@@ -21,6 +21,7 @@ export default function HomeCard({ title, description, label, herf }) {
   } else {
     return (
       <div className={styles.cardContainer}>
+        {icon}
         <div className={styles.contentDiv}>
           <Heading size="md" color="var(--purple-4)">
             {title}
