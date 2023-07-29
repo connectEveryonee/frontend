@@ -3,7 +3,6 @@ import HomeCard from "../homeCard/homeCard";
 import styles from "./ourServices.module.css";
 import Heading from "@/components/common/Heading/Heading";
 
-
 import { PiInfinityBold } from "react-icons/pi";
 import { BiCustomize } from "react-icons/bi";
 import { LiaMoneyBillSolid } from "react-icons/lia";
@@ -19,14 +18,7 @@ export default function OurServices() {
             size="lg"
             fontFamily="var(--system-font)"
           >
-            What can you do with{" "}
-            <span
-              style={{
-                boxShadow: "inset 0 -18px rgba(255,184,46,.9);",
-              }}
-            >
-              SimpleLinks?
-            </span>
+            What can you do with SimpleLinks ?
           </Heading>
           <div className={styles.process}>
             <HomeCard
