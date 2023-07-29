@@ -23,7 +23,7 @@ export default function Page() {
                 store.getState().user.userName
               }`
             );
-            SucessToast("link Copied to Clip Board");
+            SucessToast("link Copied to Clip Board",null,'📋');
           }}
           size="sm"
         >

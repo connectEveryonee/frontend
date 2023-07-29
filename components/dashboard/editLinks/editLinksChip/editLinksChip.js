@@ -25,10 +25,8 @@ export default function EditLinks({ name, url, Links, index }) {
   };
   const deleteLink = async () => {
     const newLinks = [...Links];
-    console.log(index)
-    console.log(Links[index])
-    newLinks.splice(index,1);
-     await DeleteLinkElemet(newLinks);
+    newLinks.splice(index, 1);
+    await DeleteLinkElemet(newLinks);
     store.dispatch(DeleteLinkItem(index));
   };
 
