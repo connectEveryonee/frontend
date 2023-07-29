@@ -21,13 +21,15 @@ export default function EditLinks({ name, url, Links, index }) {
     const newLinks = [...Links];
     newLinks[index] = linkData;
     await UpdateLinks(newLinks);
-    store.dispatch(setInitialLinks(newLinks))
+    store.dispatch(setInitialLinks(newLinks));
   };
   const deleteLink = async () => {
     const newLinks = [...Links];
-    newLinks.splice(index, 1);
-    await DeleteLinkElemet(index);
-    store.dispatch(DeleteLinkItem(newLinks));
+    console.log(index)
+    console.log(Links[index])
+    newLinks.splice(index,1);
+     await DeleteLinkElemet(newLinks);
+    store.dispatch(DeleteLinkItem(index));
   };
 
   // const UpdateLinks = async () => {};

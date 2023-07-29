@@ -1,8 +1,7 @@
-
 import styles from "./mobile.module.css";
 import CustomLinks from "./customLInksComp";
 
-export default function Mobile({userName}) {
+export default function Mobile({ userName }) {
   return (
     <>
       <div className={`${styles.device}`}>
