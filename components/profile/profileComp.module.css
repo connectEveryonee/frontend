@@ -1,9 +1,21 @@
 .mainComp {
-  height: 100%;
+  /* height: 100%; */
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--dropShadow-1);
+  background-color: rgba(242, 242, 241, 255);
+  /* box-shadow: var(--dropShadow-0); */
+}
+
+/* .profileComp {
+  
+} */
+
+.userForm {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
 }

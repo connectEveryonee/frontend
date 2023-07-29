@@ -9,16 +9,10 @@ import Button from "@/components/common/Button/Button";
 import Link from "next/link";
 import { RiStackshareLine } from "react-icons/ri";
 import { SucessToast } from "@/utility/toaster";
+import SetLocalStorage from "@/utility/localStorage";
 
 export default function Page() {
-  if (typeof window !== "undefined") {
-    // do localStorage stuff here
-    const userInfo = {
-      userName: localStorage.getItem("userName"),
-      token: localStorage.getItem("token"),
-    };
-    store.dispatch(SetUser(userInfo));
-  }
+
 
   return (
     <>

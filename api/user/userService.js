@@ -20,3 +20,15 @@ export async function CheckuserName(name) {
     });
   return user;
 }
+
+export async function GetUser({name,token}) {
+  const user = instance
+    .post("/api/user/getUser", { userName: name })
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      return err.response;
+    });
+  return user;
+}
