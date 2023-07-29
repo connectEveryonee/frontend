@@ -15,14 +15,10 @@
 }
 .rightDiv {
   right: 0;
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-
-
 
 @media (max-width: 768px) {
   .rightDiv {

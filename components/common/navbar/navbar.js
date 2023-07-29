@@ -1,12 +1,8 @@
-
 import Link from "next/link";
 import Heading from "../../common/Heading/Heading";
 import styles from "./navbar.module.css";
 import Image from "next/image";
-import { cookies } from "next/dist/client/components/headers";
-import { RiUser3Line } from "react-icons/ri";
 import Profileimg from "./profileimg/profileimg";
-
 
 export default async function Navbar() {
   return (
@@ -21,7 +17,9 @@ export default async function Navbar() {
           </div>
         </Link>
 
-        <div className={styles.rightDiv}><Profileimg/></div>
+        <div className={styles.rightDiv}>
+          <Profileimg />
+        </div>
       </div>
     </nav>
   );
