@@ -10,6 +10,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "SimpleLinks",
   description: "Sharing Links made Simple",
+  icons: {
+    src: "logo.png",
+    sizes: "144x144",
+    type: "image/png",
+    purpose: "maskable any",
+  },
 };
 
 export default function RootLayout({ children }) {

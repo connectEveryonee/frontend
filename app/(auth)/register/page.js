@@ -14,6 +14,7 @@ import { CheckuserName } from "@/api/user/userService";
 export default function SignuP() {
   const router = useRouter();
   const [userData, setUserData] = useState({
+    name: "",
     userName: "",
     email: "",
     password: "",
@@ -58,6 +59,19 @@ export default function SignuP() {
             Register
           </Heading>
           <form className={styles.loginForm}>
+            <div>
+              <CustomInput
+                className="input-medium"
+                type="string"
+                size="lg"
+                label="Name:"
+                value={userData.name}
+                onChange={(e) => {
+                  e.preventDefault();
+                  setUserData({ ...userData, name: e.target.value });
+                }}
+              />
+            </div>
             <div className={styles.shortflex}>
               <div>
                 <CustomInput
