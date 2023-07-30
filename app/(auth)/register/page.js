@@ -21,7 +21,7 @@ export default function SignuP() {
   });
 
   const register = async () => {
-    if (!userData.email || !userData.password || !userData.userName) {
+    if (!userData.email || !userData.password) {
       WarningTost("plz fill all feilds");
     } else {
       const res = await RegisterApi({ ...userData });
@@ -36,13 +36,17 @@ export default function SignuP() {
   const SubmitHandele = async () => {
     const userNameCheker = await CheckuserName(userData.userName);
 
-    if (userNameCheker.status === 403) {
-      ErrorToast(
-        "username already exits",
-        setUserData({ ...userData, userName: "" })
-      );
+    if (userData.userName.includes(" ")) {
+      WarningTost("No Spaces in User Name");
     } else {
-      register();
+      if (userNameCheker.status === 403) {
+        ErrorToast(
+          "username already exits",
+          setUserData({ ...userData, userName: "" })
+        );
+      } else {
+        register();
+      }
     }
   };
 

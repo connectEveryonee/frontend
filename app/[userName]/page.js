@@ -12,7 +12,7 @@ export const generateMetadata = ({ params }) => {
 };
 export default async function Page({ params }) {
   const checkUsername = await CheckuserName(params.userName);
- 
+
   if (checkUsername.status === 404) {
     return (
       <>
@@ -23,7 +23,10 @@ export default async function Page({ params }) {
           </Heading>
           <div>
             <Text size="lg" color="grey">
-              Grap this username by <a href="/register" style={{textDecoration:'none'}}>Registering</a>
+              Grap this username by{" "}
+              <a href="/register" style={{ textDecoration: "none" }}>
+                Registering
+              </a>
             </Text>
           </div>
         </section>
