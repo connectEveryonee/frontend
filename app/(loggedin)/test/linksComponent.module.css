@@ -1,0 +1,39 @@
+.mainComp {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addLinkComp {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.large {
+  max-height: 50px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 50px;
+  background-image: var(--gradient-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.editLinksComp {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 760px) {
+}
