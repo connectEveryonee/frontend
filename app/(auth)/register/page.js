@@ -21,6 +21,11 @@ export default function SignuP() {
     roles: ["user"],
   });
 
+  const keypress = (e) => {
+    if (e.key === "Enter") {
+      SubmitHandele();
+    }
+  };
   const register = async () => {
     if (!userData.email || !userData.password) {
       WarningTost("plz fill all feilds");
@@ -52,7 +57,12 @@ export default function SignuP() {
   };
 
   return (
-    <section className={styles.mainContiner}>
+    <section
+      className={styles.mainContiner}
+      onKeyDown={(e) => {
+        keypress(e);
+      }}
+    >
       <main className={styles.main}>
         <div className={styles.loginContainer}>
           <Heading size="md" fontFamily="Ubuntu">
@@ -61,7 +71,6 @@ export default function SignuP() {
           <form className={styles.loginForm}>
             <div>
               <CustomInput
-                className="input-medium"
                 type="string"
                 size="lg"
                 label="Name:"

@@ -18,6 +18,13 @@ export default function Signin() {
     password: "",
   });
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+       handleChange(event);
+      
+    }
+  };
+
   const router = useRouter();
   const handleChange = async () => {
     if (!userData.email || !userData.password) {
@@ -40,7 +47,12 @@ export default function Signin() {
     }
   };
   return (
-    <main className={styles.main}>
+    <main
+      className={styles.main}
+      onKeyDown={(e) => {
+        handleKeyPress(e);
+      }}
+    >
       <div className={styles.loginContainer}>
         <Heading size="md" fontFamily="Ubuntu">
           Signin
