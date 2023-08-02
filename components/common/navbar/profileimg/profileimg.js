@@ -22,7 +22,7 @@ export default function Profileimg() {
       {/* <Heading size="sm" fontFamily="var(--system-font)">
         Profile
       </Heading> */}
-      <div
+      {/* <div
         style={{ cursor: "pointer" }}
         onClick={() => {
           router.push("/profile");
@@ -31,7 +31,7 @@ export default function Profileimg() {
         <Heading size="sm" fontFamily="var(--system-font)">
           Profile
         </Heading>
-      </div>
+      </div> */}
       <div
         onClick={() => {
           handleLogout();
