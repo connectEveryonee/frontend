@@ -1,9 +1,10 @@
-import { store } from "@/redux/store";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import { SetUser } from "@/redux/slices/userSlice";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ToastContainer autoClose={2000} /> <main>{children} </main>
+     
       </body>
     </html>
   );

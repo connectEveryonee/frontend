@@ -1,6 +1,5 @@
+
 import LandingNavbar from "@/components/home/navbar/navbar";
-
-
 
 export const metadata = {
   title: "Register",

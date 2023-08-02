@@ -46,9 +46,9 @@ export default function OurServices() {
               description="Aanalytics for your tweets to monitor your growth"
             />
           </div>
-          <Text size="lg" fontFamily="var(--system-font)">
+          {/* <Text size="lg" fontFamily="var(--system-font)">
             More services coming soon
-          </Text>
+          </Text> */}
         </article>
       </section>
     </>

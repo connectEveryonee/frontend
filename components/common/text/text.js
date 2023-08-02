@@ -1,24 +1,33 @@
 import PropTypes from "prop-types";
 import styles from "./text.module.css";
 
-export default function Text({ children, size = "md", color = "#333", type }) {
+export default function Text({ children, size = "md", color = "#333", type ,fontFamily=''}) {
   if (size === "lg") {
     return (
-      <p style={{ color,fontFamily:type }} className={`${styles.paragraph__lg} ${styles.paragraph}`}>
+      <p
+        style={{ color, fontFamily: type }}
+        className={`${styles.paragraph__lg} ${styles.paragraph}`}
+      >
         {children}
       </p>
     );
   }
   if (size == "md") {
     return (
-      <p style={{ color }} className={`${styles.paragraph__md} ${styles.paragraph}`}>
+      <p
+        style={{ color }}
+        className={`${styles.paragraph__md} ${styles.paragraph}`}
+      >
         {children}
       </p>
     );
   }
   if (size == "sm") {
     return (
-      <p style={{ color }} className={`${styles.paragraph__sm} ${styles.paragraph}`}>
+      <p
+        style={{ color }}
+        className={`${styles.paragraph__sm} ${styles.paragraph}`}
+      >
         {children}
       </p>
     );
