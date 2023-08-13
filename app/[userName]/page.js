@@ -1,9 +1,11 @@
+"use client";
 import { Getlinks } from "@/api/simpleLinks/simplelinksServices";
 import styles from "./link.module.css";
 import EventsChip from "@/components/events/eventsChip";
 import Heading from "@/components/common/Heading/Heading";
 import { CheckuserName } from "@/api/user/userService";
 import Text from "@/components/common/text/text";
+import { PageAnalytics } from "@/api/analytics/analytics";
 
 export const generateMetadata = ({ params }) => {
   return {
@@ -12,6 +14,7 @@ export const generateMetadata = ({ params }) => {
 };
 export default async function Page({ params }) {
   const checkUsername = await CheckuserName(params.userName);
+
 
   if (checkUsername.status === 404) {
     return (
@@ -34,6 +37,7 @@ export default async function Page({ params }) {
     );
   } else {
     const Links = await Getlinks(params.userName);
+     const updateAnalytics = await PageAnalytics(params.userName);
     return (
       <>
         <div className={styles.mainComp}>
@@ -46,7 +50,7 @@ export default async function Page({ params }) {
           <div className={styles.links}>
             {Links.map((data, index) => {
               return (
-                <EventsChip key={index} url={data.url} title={data.name} />
+                <EventsChip key={index} url={data.url} title={data.name} userName={params.userName} />
               );
             })}
           </div>

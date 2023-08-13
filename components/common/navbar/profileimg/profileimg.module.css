@@ -8,7 +8,7 @@
   padding: 36px;
 }
 .dropDown div:first-child {
-  border-right: 3px solid var(--purple-1);
+  /* border-right: 3px solid var(--purple-1); */
   border-left: 3px solid var(--purple-1);
   transform: skew(-15deg);
 }
