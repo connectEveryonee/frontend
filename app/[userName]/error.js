@@ -9,7 +9,7 @@ export default function Error() {
       <section className={styles.mainComp}>
         {" "}
         <Heading size="md" fontFamily="var(--system-font)">
-          "The page you’re looking for doesn’t exist."
+          The page you are looking for does not exist.
         </Heading>
         <div>
           <Text size="lg" color="grey">
