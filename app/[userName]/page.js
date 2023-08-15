@@ -15,7 +15,6 @@ export const generateMetadata = ({ params }) => {
 export default async function Page({ params }) {
   const checkUsername = await CheckuserName(params.userName);
 
-
   if (checkUsername.status === 404) {
     return (
       <>
@@ -37,7 +36,7 @@ export default async function Page({ params }) {
     );
   } else {
     const Links = await Getlinks(params.userName);
-     const updateAnalytics = await PageAnalytics(params.userName);
+    const updateAnalytics = await PageAnalytics(params.userName);
     return (
       <>
         <div className={styles.mainComp}>
@@ -50,7 +49,12 @@ export default async function Page({ params }) {
           <div className={styles.links}>
             {Links.map((data, index) => {
               return (
-                <EventsChip key={index} url={data.url} title={data.name} userName={params.userName} />
+                <EventsChip
+                  key={index}
+                  url={data.url}
+                  title={data.name}
+                  userName={params.userName}
+                />
               );
             })}
           </div>
